@@ -1,8 +1,5 @@
 [requires]
 protobuf/3.21.4 
 
-[build_requires]
-protobuf/3.21.4 
-
 [generators]
 cmake
