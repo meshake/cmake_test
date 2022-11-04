@@ -3,3 +3,7 @@ protobuf/3.21.4
 
 [generators]
 cmake
+
+[imports]
+bin, *.dll -> ./bin # Windows
+lib, *.so* -> ./bin # Linux
