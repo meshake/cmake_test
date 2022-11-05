@@ -1,17 +1,33 @@
-# Build missing dependencies in Release mode
-
+# Conan: Build and install dependencies
+## Build missing dependencies in Release mode
 conan install --install-folder release --settings build_type=Release --profile profiles/proto32-linux --build=missing .
 
-# Build missing dependencies in Debug mode
-
+## Build missing dependencies in Debug mode
 conan install --install-folder debug --settings build_type=Debug --profile profiles/proto32-linux --build=missing .
 
-# Generate Ninja build files (run inside release or debug directory)
-cmake build -GNinja ..
+# cmake: generate build files
+## Linux
+cmake -S . -B release -GNinja
 
-ninja test-proto
+or
 
-# Generate Makefiles (run inside release or debug directory)
-cmake build -G"Unix Makefiles" ..
+cmake -S . -B release -G"Unix Makefiles"
 
-make test-proto
+## Windows
+cmake -S . -B release
+
+# cmake: build
+## Linux
+cmake --build release --config Release
+
+or
+
+cd release && ninja MyProject
+
+or
+
+cd release && make MyProject
+
+## Windows
+
+cmake --build release --target MyProject --config Release

@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.22.1)
 
 if (WIN32)
-    # Set platform on Visual Studio solution files to win32
-    # NOTE: this MUST be set before "project" definition
-    set(CMAKE_GENERATOR_PLATFORM win32)
+    # Set the platform on Visual Studio solution files to Win32
+    # NOTE 1: this MUST be set before "project" definition
+    # NOTE 2: "CACHE INTERNAL" is needed due to a bug: https://gitlab.kitware.com/cmake/cmake/-/issues/19409
+    set(CMAKE_GENERATOR_PLATFORM Win32 CACHE INTERNAL "")
 endif (WIN32)
 
 project(MyProject VERSION 1.0
