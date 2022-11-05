@@ -5,5 +5,5 @@ protobuf/3.21.4
 cmake
 
 [imports]
-bin, *.dll -> ./bin # Windows
+bin, *.dll -> ./bin     # Windows
 lib, *.so* -> ./bin/lib # Linux
