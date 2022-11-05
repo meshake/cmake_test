@@ -14,7 +14,7 @@ or
 cmake -S . -B release -G"Unix Makefiles"
 
 ## Windows
-cmake -S . -B release
+cmake -S . -B release -G"Visual Studio 17 2022"
 
 # cmake: build
 ## Linux
@@ -29,5 +29,4 @@ or
 cd release && make MyProject
 
 ## Windows
-
 cmake --build release --target MyProject --config Release
