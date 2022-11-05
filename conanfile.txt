@@ -6,4 +6,4 @@ cmake
 
 [imports]
 bin, *.dll -> ./bin # Windows
-lib, *.so* -> ./bin # Linux
+lib, *.so* -> ./bin/lib # Linux

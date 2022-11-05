@@ -10,6 +10,12 @@ set(CMAKE_CXX_FLAGS "-m32")
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
+if (UNIX)
+    # Link libraries located in lib directory relative to the executables
+    set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
+    set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
+endif (UNIX)
+
 add_subdirectory(math)
 add_subdirectory(proto)
 
