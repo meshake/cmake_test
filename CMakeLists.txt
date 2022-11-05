@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.22.1)
 
 if (WIN32)
+    # Set platform on Visual Studio solution files to win32
+    # NOTE: this MUST be set before "project" definition
     set(CMAKE_GENERATOR_PLATFORM win32)
 endif (WIN32)
 
