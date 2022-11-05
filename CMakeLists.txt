@@ -1,16 +1,21 @@
 cmake_minimum_required(VERSION 3.22.1)
 
+if (WIN32)
+    set(CMAKE_GENERATOR_PLATFORM win32)
+endif (WIN32)
+
 project(MyProject VERSION 1.0
                   DESCRIPTION "My Test Project"
                   LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-m32")
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 if (UNIX)
+    set(CMAKE_CXX_FLAGS "-m32")
+
     # Link libraries located in lib directory relative to the executables
     set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
     set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
